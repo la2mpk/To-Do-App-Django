@@ -1,9 +1,10 @@
 {% extends 'tasks/base.html' %}
+
 {% block content %}
-    <h3>¿Estás seguro que deseas borrar "{{ task }}"?</h3>
+<h3 class="text-center font-weight-bold">¿Estás seguro que deseas borrar <mark>"{{ task }}"?</mark></h3>
     <form method="POST">
         {% csrf_token %}
-        <input type="submit" name="delete task">
-        <a href="{% url 'tasks:index' %}">Cancelar</a>
+        <input class="btn btn-danger" type="submit" name="delete task" value="Borrar">
+        <a class="btn btn-primary btn-block" href="{% url 'tasks:index' %}">Cancelar</a>
     </form>
 {% endblock %}

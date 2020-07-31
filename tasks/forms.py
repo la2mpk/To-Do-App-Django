@@ -1,8 +1,10 @@
-from django.forms import ModelForm
+from django import forms
 from .models import Task
 
 
-class TaskForm(ModelForm):
+class TaskForm(forms.ModelForm):
+    
+    nombre = forms.CharField(widget=forms.TextInput(attrs={'placeholder': 'Añade una nueva tarea ..'}))
 
     class Meta:
 

@@ -2,23 +2,25 @@
 {% block content %}
     <div class="container">
 
-        <h2>Tareas</h2>
+        <h3 class="text-center font-weight-bold">Agregar tarea</h3>
 
         <form method="POST">
             {% csrf_token %}
-            {{ form.title }}
-            <input type="submit" name="create task">
+            {{ form.nombre }}
+            <input class="btn btn-primary btn-block" type="submit" name="create task" value="Crear">
         </form>
+        <hr/>
 
         {% for task in tasks %}
-        <div>
-            {% if task.complete %}
+        <div class="item-row">
+            <a class="btn btn-sm btn-info" href="{% url 'tasks:update' task.id %}">Actualizar</a>
+            <a class="btn btn-sm btn-danger" href="{% url 'tasks:delete' task.id %}">Borrar</a>
+            {% if task.realizada %}
                 <strike>{{ task }}</strike>
             {% else %}
-                <p>{{ task }}</p>
+                <span>{{ task }}</span>
             {% endif %}
-            <a href="{% url 'tasks:update' task.id %}">Actualizar</a>
-            <a href="{% url 'tasks:delete' task.id %}">Borrar</a>
+
         </div>
         {% endfor %}
 

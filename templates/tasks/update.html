@@ -1,9 +1,9 @@
 {% extends 'tasks/base.html' %}
 {% block content %}
-    <h3>Actualizar Tarea</h3>
+    <h3 class="text-center font-weight-bold">Actualizar Tarea</h3>
     <form method="POST">
         {% csrf_token %}
         {{ form }}
-        <input type="submit" name="update task">
+        <input class="btn btn-primary" type="submit" name="update task" value="Actualizar">
     </form>
 {% endblock %}

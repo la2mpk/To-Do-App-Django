@@ -4,12 +4,23 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+        <!-- Google Font: Noto Sans JP -->
+        <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+
+        {% load static %}
+        <!-- Personal CSS -->
+        <link href="{% static 'polls/style.css' %}" rel="stylesheet">
+
         <title>Todo App made with Django</title>
     </head>
     <body>
-        {% block content %}
-        {% endblock %}
+        <div class="center-column">
+            {% block content %}
+            {% endblock %}
+        </div>
     </body>
 </html>
